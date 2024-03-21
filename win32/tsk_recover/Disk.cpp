@@ -112,26 +112,26 @@ TSK_WALK_RET_ENUM dirWalkCallback(TSK_FS_FILE* file, const char* path, void* ptr
             // Tại đây, bạn có thể thêm code để khôi phục file này
             // Ví dụ: gọi một hàm để sao chép file này ra nơi khác hoặc ghi nội dung nó ra một file mới
 
-            std::string outputPath = "D:\\out\\" + fileName;
+            //std::string outputPath = "D:\\out\\" + fileName;
 
-            // Mở file đích để ghi
-            std::ofstream outputFile(outputPath, std::ios::out | std::ios::binary);
-            if (!outputFile) {
-                std::cerr << "Unable to open file for writing: " << outputPath << std::endl;
-                return TSK_WALK_CONT;
-            }
+            //// Mở file đích để ghi
+            //std::ofstream outputFile(outputPath, std::ios::out | std::ios::binary);
+            //if (!outputFile) {
+            //    std::cerr << "Unable to open file for writing: " << outputPath << std::endl;
+            //    return TSK_WALK_CONT;
+            //}
 
-            // Đọc và ghi dữ liệu từ file nguồn
-            const size_t bufferSize = 1024 * 1024; // Đọc từng 1MB một để giảm bộ nhớ sử dụng
-            char* buffer = new char[bufferSize];
-            TSK_OFF_T offset = 0;
-            ssize_t bytesRead;
-            while ((bytesRead = tsk_fs_file_read(file, offset, buffer, bufferSize, TSK_FS_FILE_READ_FLAG_NONE)) > 0) {
-                outputFile.write(buffer, bytesRead);
-                offset += bytesRead;
-            }
-            delete[] buffer;
-            outputFile.close();
+            //// Đọc và ghi dữ liệu từ file nguồn
+            //const size_t bufferSize = 1024 * 1024; // Đọc từng 1MB một để giảm bộ nhớ sử dụng
+            //char* buffer = new char[bufferSize];
+            //TSK_OFF_T offset = 0;
+            //ssize_t bytesRead;
+            //while ((bytesRead = tsk_fs_file_read(file, offset, buffer, bufferSize, TSK_FS_FILE_READ_FLAG_NONE)) > 0) {
+            //    outputFile.write(buffer, bytesRead);
+            //    offset += bytesRead;
+            //}
+            //delete[] buffer;
+            //outputFile.close();
         }
     }
     return TSK_WALK_CONT;

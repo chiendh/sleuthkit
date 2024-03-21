@@ -523,7 +523,7 @@ int main() {
         }
     }
 
-    Disk disk("\\\\.\\PhysicalDrive0");
+    Disk disk("\\\\.\\PhysicalDrive1");
     disk.analyzeDisk();
 
     //auto partitions = disk.getPartitions();
